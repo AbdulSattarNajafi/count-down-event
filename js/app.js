@@ -55,10 +55,33 @@ const items = document.querySelectorAll('.timer__item-time');
 // futureDate = YYYY/MM/DD /HH/MM/SS GMT+0800 => Hong Kong Time zone
 // const futureDate = new Date('2024-02-27 12:00:00 GMT+0800');
 
-const now = new Date();
-// const futureDate = new Date(now.getFullYear(), now.getMonth() + 1, 1);
-const timerDate = '2024-05-27 12:00:00 GMT+0800';
-const futureDate = new Date(timerDate);
+// const now = new Date();
+// const futureDates = new Date(now.getFullYear(), now.getMonth() + 3, 1);
+
+const currentDate = new Date();
+const currentUTCOffset = -8; // Hong Kong time offset from UTC is typically +8 hours
+const currentHongKongTime = currentDate.getTime() + currentUTCOffset * 60 * 60 * 1000;
+const hongKongDate = new Date(currentHongKongTime);
+
+// Calculate the future date 60 days from now
+const futureDates = new Date(hongKongDate.getTime() + 60 * 24 * 60 * 60 * 1000);
+
+// Format the future date
+const futureYear = futureDates.getFullYear();
+const futureMonth = String(futureDates.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed, so we add 1
+const futureDay = String(futureDates.getDate()).padStart(2, '0');
+const futureHours = String(futureDates.getHours()).padStart(2, '0');
+const futureMinutes = String(futureDates.getMinutes()).padStart(2, '0');
+const futureSeconds = String(futureDates.getSeconds()).padStart(2, '0');
+
+// Construct the date string
+const timerDates = `${futureYear}-${futureMonth}-${futureDay} ${futureHours}:${futureMinutes}:${futureSeconds} GMT+0800`;
+
+console.log(timerDates);
+
+const timerDate = '2024-05-31T17:00:00.000Z';
+
+const futureDate = new Date(timerDates);
 
 //const futureDate
 const oneHour = 60 * 60 * 1000;

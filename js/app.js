@@ -57,8 +57,8 @@ const items = document.querySelectorAll('.timer__item-time');
 
 const now = new Date();
 // const futureDate = new Date(now.getFullYear(), now.getMonth() + 1, 1);
-
-const futureDate = new Date('2024-05-27 12:00:00 GMT+0800');
+const timerDate = '2024-05-27 12:00:00 GMT+0800';
+const futureDate = new Date(timerDate);
 
 //const futureDate
 const oneHour = 60 * 60 * 1000;

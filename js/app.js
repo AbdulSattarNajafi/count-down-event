@@ -62,6 +62,7 @@ const currentDate = new Date();
 // Calculate the future date 60 days from now in UTC
 const futureDateUTC = new Date(currentDate.getTime() + 60 * 24 * 60 * 60 * 1000);
 
+console.log(currentDate.getTime());
 // Set the time zone offset for Hong Kong (GMT+8)
 const hongKongOffset = 8 * 60; // Offset in minutes
 
@@ -71,12 +72,7 @@ const offsetMilliseconds = hongKongOffset * 60 * 1000;
 // Adjust the future date to reflect the time zone offset of Hong Kong
 const futureDateHongKong = new Date(futureDateUTC.getTime() + offsetMilliseconds);
 
-// Format the future date in Hong Kong time
-const timerDates = futureDateHongKong.toISOString().replace('Z', ' GMT+0800');
-
-console.log(timerDates);
-
-const futureDate = new Date(futureDateHongKong);
+const futureDate = new Date('2024-05-27T12:00:00+0800');
 
 //const futureDate
 const oneHour = 60 * 60 * 1000;

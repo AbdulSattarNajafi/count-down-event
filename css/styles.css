@@ -529,6 +529,7 @@ img {
     width: 100%;
     background-color: #193268;
     padding: 1.25rem 1rem;
+    border: 1px solid red;
     border-radius: var(--border-radious-12);
     box-shadow: var(--box-shadow);
 }
